@@ -1,22 +1,6 @@
 /node_modules
-/subgraphs/node_modules
-/subgraphs/build
-/neardev
-/.pnp
-.pnp.js
+/build
 /.vscode
-/out
-
-#cache
-.cache
-.parcel-cache
-
-#contracts
-target
-notes
-
-# testing
-/coverage
 
 # production
 /dist
