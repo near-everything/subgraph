@@ -1,0 +1,20 @@
+{
+  "name": "near-receipts",
+  "version": "0.1.0",
+  "repository": "https://github.com/VitalPointAI/graph-near-receipts.git",
+  "license": "MIT",
+  "scripts": {
+    "codegen": "graph codegen",
+    "build": "graph build",
+    "auth": "graph auth --product hosted-service",
+    "deploy": "graph deploy --product hosted-service elliotBraem/common-good"
+  },
+  "devDependencies": {
+    "@graphprotocol/graph-cli": "0.25.1",
+    "@graphprotocol/graph-ts": "0.24.1"
+  },
+  "dependencies": {
+    "babel-polyfill": "^6.26.0",
+    "babel-register": "^6.26.0"
+  }
+}
