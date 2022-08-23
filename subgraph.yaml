@@ -1,6 +1,6 @@
 specVersion: 0.0.4
-description: near collect common-good # the name of the subgraph
-repository: https://github.com/elliotBraem/near-frontier/tree/main/subgraphs # repo where subgraph project is stored
+description: inventory of everything # the name of the subgraph
+repository: https://github.com/near-everything/subgraph # repo where subgraph project is stored
 schema:
   file: ./schema.graphql
 features:
@@ -13,35 +13,15 @@ dataSources:
     name:  Token
     network: near-testnet # can choose either near-mainnet or near-testnet
     source:
-      account: common-good.collect.testnet # contract account you want to pull data from
-      startBlock: 83759640 # starting block on near-mainnet for indexing
+      account: v1.everything.testnet # contract account you want to pull data from
+      startBlock: 98365875 # starting block on near-mainnet for indexing
     mapping:
       apiVersion: 0.0.5
       language: wasm/assemblyscript
-      file: ./src/handlers/common-good.ts
+      file: ./src/handlers/inventory.ts
       entities:
         - Token
         - User
       receiptHandlers:
         - handler: handleReceipt # name of the receipt handler
   
-  # ---------------------------------------------------------
-  # ORDERS --------------------------------------------------
-  # ---------------------------------------------------------
-  - kind: near
-    name: Orders
-    network: near-testnet # can choose either near-mainnet or near-testnet
-    source:
-      account: order-book.collect.testnet # contract account you want to pull data from
-      startBlock: 83759640 # starting block on near-mainnet for indexing
-    mapping:
-      apiVersion: 0.0.5
-      language: wasm/assemblyscript
-      file: ./src/handlers/order-book.ts
-      entities:
-        - Order
-        - Token
-        - User
-      receiptHandlers:
-        - handler: handleReceipt # name of the receipt handler
-        

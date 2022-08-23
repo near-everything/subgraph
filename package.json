@@ -1,13 +1,13 @@
 {
   "name": "near-receipts",
   "version": "0.1.0",
-  "repository": "https://github.com/VitalPointAI/graph-near-receipts.git",
+  "repository": "https://github.com/near-everything/subgraph",
   "license": "MIT",
   "scripts": {
     "codegen": "graph codegen",
     "build": "graph build",
-    "auth": "graph auth --product hosted-service",
-    "deploy": "graph deploy --product hosted-service elliotBraem/common-good"
+    "auth": "graph auth --product hosted-service d0155ed218f34e84865b12da11076720",
+    "deploy": "graph deploy --product hosted-service near-everything/inventory"
   },
   "devDependencies": {
     "@graphprotocol/graph-cli": "0.25.1",

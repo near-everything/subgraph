@@ -1,78 +1,10 @@
 type User @entity {
   id: ID!
-  # tokensInPossession: [Token!] @derivedFrom(field: "owner")
-  # tokensCreated: [Token!] @derivedFrom(field: "creator")
-  # ordersRequested: [Order!] @derivedFrom(field: "requester")
 }
 
 type Token @entity {
   id: ID!
   owner: User!
   ownerId: String!
-  creator: User!
-  creatorId: String!
   tokenId: String!
-  rootId: String!
-  root: Token!
-  type: TokenType!
-  image: String!
-  metadata: String!
-  status: ItemStatus!
-  category: Category!
-  labels: [String!]!
-  pendingOrders: [String!]!
-  # orderHistory: [Order!] @derivedFrom(field: "token")
-  # derivatives: [Token!] @derivedFrom(field: "root")
-}
-
-type Order @entity {
-  id: ID!
-  orderId: String!
-  tokenId: String!
-  token: Token!
-  requester: User!
-  requesterId: String!
-  requestee: User!
-  requesteeId: String!
-  status: OrderStatus!
-}
-
-
-# ---------------------------------------------------------
-# Enums ---------------------------------------------------
-# ---------------------------------------------------------
-
-enum ItemStatus @entity {
-  NEW
-  NEEDS_TRANSPORT
-  IN_TRANSIT
-  DELIVERED
-  NEEDS_LABELLING
-}
-
-enum OrderStatus @entity {
-  NEW
-  NEEDS_TRANSPORT
-  IN_TRANSIT
-  DELIVERED
-}
-
-enum Category @entity {
-  uncategorized
-  fashion
-  electronics
-  furniture
-  other
-}
-
-enum Label @entity {
-  unlabelled
-  chair
-  shoe
-  round
-}
-
-enum TokenType @entity {
-  item
-  pile
 }
